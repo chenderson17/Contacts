@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <meta name="Author" content="Caroline">
+</head>
+<body>
+    
+    <table id="contact-table">
+        <tr>
+            <th>Slot #</th>
+            <th>Name</th>
+        </tr>
+    </table>
+    <button id="search-btn">Search</button>
+    <script>
+        let namesArr = ["Arnold","Sly","Dwayne","Vin","JCVD","Steven"];
+        const ContactTable = document.getElementById("contact-table");
+        const SearchBtn = document.getElementById("search-btn");
+        for(let i = 0; i < namesArr.length; i++){
+            let row = ContactTable.insertRow();
+            let cell = row.insertCell();
+            var cell2 = row.insertCell();
+            cell.innerHTML = i;
+            cell2.innerHTML = namesArr[i];
+        }
+        SearchBtn.addEventListener("click",()=>{
+           while(true){
+           let search = prompt("Search for a name:");
+           if(namesArr[search]){
+            let res = prompt( `You selected the name ${namesArr[search]} would you like to search again Y/N`);
+            if(res === "N"){
+                break;
+            }
+           }
+           else{
+            let res = prompt("Name not found would you like to try again? Y/N?")
+            if(res === "N"){
+                break;
+            }
+           }
+        }
+        })
+    </script>
+</body>
+</html>
