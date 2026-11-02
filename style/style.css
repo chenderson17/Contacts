@@ -1,0 +1,13 @@
+*::before, *::after{
+    box-sizing: border-box;
+}
+table, th, td{
+    border: 1px solid black;
+}
+th,td{
+    padding: 1rem 2rem;
+}
+th{
+    background-color:#9abddc;
+
+}
